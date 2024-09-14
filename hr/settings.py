@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-94j$lkus&fqq02f0c2b+%j&&j*n+w0#t+n^*-l899x&44e_24(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost","127.0.0.1"]
 
 
 # Application definition
@@ -125,3 +125,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = (
+    "http://localhost:3000",
+    "https://localhost:3000",
+    "https://my-frint-end.com",
+
+)
+
+# my-api-devhub.in.th/admin
+CSRF_TRUSTED_ORIGINS =[
+    "http://localhost:3000"
+]
+
+REST_FRAMEWORK = {
+    # Gobal scope ของการทำ auth ของapi แบบทุกอัน เพื่อจะพได้ไม่ต้องมากำหนด permission_classes =[IsAuthenticated]ใส่ในview ของทุกอัน
+    "DEFAULT_PERMISSION_CLASSES":[
+        "rest_framework.permissions.IsAuthenticated"
+    ]
+}

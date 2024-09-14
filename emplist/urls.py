@@ -3,7 +3,7 @@ from .views import ListEmp, DetailEmp
 
 urlpatterns = [
     #สำหรับดูjsonทั้งหมด
-    path("", ListEmp.as_view(), name="Emp_list"),
+    path("", ListEmp.as_view(), name="emp_list"),
     #สำหรับ api/emp/<id>
-    path("<int:pk>/", DetailEmp.as_view(), name="Emp_detail"),
+    path("<int:pk>/", DetailEmp.as_view(), name="emp_detail"),
 ]

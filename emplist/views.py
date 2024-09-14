@@ -10,6 +10,7 @@ C = Create
 R =Read
 U =Update
 D =Delete
+Test ว่าขึ้นไปอยู่บนserverไหม
 """
 
 #for GET/READ API

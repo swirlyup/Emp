@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #djangorest
     'rest_framework',
+    'rest_framework_simplejwt',
     #app
     'emplist',
     'accounts',
@@ -143,5 +144,9 @@ REST_FRAMEWORK = {
     # Gobal scope ของการทำ auth ของapi แบบทุกอัน เพื่อจะพได้ไม่ต้องมากำหนด permission_classes =[IsAuthenticated]ใส่ในview ของทุกอัน
     "DEFAULT_PERMISSION_CLASSES":[
         "rest_framework.permissions.IsAuthenticated"
-    ]
+    ],
+    #Config simplejwt
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
 }
